@@ -9,6 +9,7 @@ class Validators(object):
         self.REGEX_INTEGER = '^[0-9]+$'
         self.REGEX_EMAIL = '^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$'
         self.REGEX_NAME = "^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)"
+        self.REGEX_PASSWORD = "^[a-zA-Z0-9_-]{4,18}$"
 
     def validateStringLength(self,minLength : int):
         if len(self.value) >= minLength:
@@ -54,6 +55,10 @@ class Validators(object):
             return False
         return True
 
+    def validatePassword(self):
+        if re.search(self.REGEX_PASSWORD,self.value):
+            return False
+        return True
 
     def messageAlert(self,message  : str):
         return ValidationError(

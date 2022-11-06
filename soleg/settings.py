@@ -61,6 +61,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+AUTHENTICATION_BACKENDS = (
+    'apps.authentication.backends.EmailBackend',
+)
+
 ROOT_URLCONF = 'soleg.urls'
 
 TEMPLATES = [
