@@ -4,7 +4,6 @@ $(document).ready(function() {
     let validatorServerSide = $('form.needs-validation').jbvalidator({
         errorMessage: true,
         successClass: true,
-        invalidFeedBackClass: 'invalid-tooltip',
     });
 
     validatorServerSide.validator.custom = function(el, event){
